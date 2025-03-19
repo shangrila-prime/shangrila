@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Alice", serif;
+}
+
+body {
+    font-size: 18px;
+    line-height: 1.6;
+    background-color: #000F;
+}
+
+h1 {
+    font-size: 5rem;
+    -webkit-text-stroke: white 1px;
+    color: transparent;
+    font-style: italic;
+}
+
+/* Logo Styling */
+.club-logo {
+    width: 40px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+@media (min-width: 768px) {
+    .club-logo {
+        width: 60px;
+    }
+}
+
+/* Home Section */
+.home {
+    color: rgb(137, 146, 151);
+    font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    text-transform: capitalize;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("/assets/1backgroung.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 45rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Navbar Styling */
+nav {
+    height: 60px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    z-index: 1000;
+    transition: top 0.3s;
+}
+
+.nav-hidden {
+    top: -60px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li {
+    position: relative;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul li::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0%;
+    height: 3px;
+    background-color: greenyellow;
+    transition: width 0.3s ease, left 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav ul li:hover::after,
+nav ul li.active::after {
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+/* Sections */
+section {
+    background-color: black;
+    text-align: center;
+    padding: 50px 20px;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* About Section */
+#about {
+    height: 100vh;
+    width: 100dvw;
+    display: flex;
+    padding: 1.4rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("/assets/1backgroung.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+/* Contact Section */
+#contact {
+    color: white;
+    padding: 80px 20px;
+    min-height: 70vh;
+}
+
+/* Events Section */
+#events {
+    background-color: black;
+}
+
+/* Wavy Text Effect */
+.wavy {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.wavy span {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    animation: waveMove 1s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes waveMove {
+    0% {
+        transform: translateY(0px);
+        text-shadow: none;
+    }
+    20% {
+        transform: translateY(-30px);
+        text-shadow: 0px 10px 15px rgba(255, 255, 255, 0.6);
+    }
+    40% {
+        transform: translateY(0px);
+        text-shadow: none;
+    }
+    60% {
+        transform: translateY(-15px);
+        text-shadow: 0px 5px 10px rgba(255, 255, 255, 0.4);
+    }
+    100% {
+        transform: translateY(0px);
+        text-shadow: none;
+    }
+}
+
+/* Animated Text */
+#adds {
+    color: rgb(244, 10, 236);
+    font-size: 4rem;
+    text-align: center;
+    animation: change 2s linear infinite;
+}
+
+@keyframes change {
+    0% {
+        transform: translateZ(20px);
+    }
+    100% {
+        transform: translateZ(-50px);
+    }
+}
+
+/* Map Container */
+.map-container {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.map-container iframe {
+    top: 0;
+    left: 0;
+    width: 60dvw;
+    height: 40dvh;
+}
+
+/* Mobile Styling */
+@media (max-width: 768px) {
+    nav {
+        padding: 15px;
+        justify-content: space-between;
+        height: auto;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 28px;
+        padding: 30px;
+    }
+
+    nav ul {
+        position: absolute;
+        top: 0;
+        right: 5%;
+        width: 55%;
+        background: rgba(0, 0, 0, 0.95);
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        width: 100%;
+        padding: 14px;
+    }
+
+    nav ul li a {
+        display: block;
+        width: 100%;
+        padding: 16px 20px;
+        font-size: 24px;
+    }
+}
